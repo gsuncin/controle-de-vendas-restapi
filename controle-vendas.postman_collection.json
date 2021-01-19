@@ -1,0 +1,376 @@
+{
+	"info": {
+		"_postman_id": "c281aca6-ea36-4b3e-8b2e-e71fc52a66e0",
+		"name": "controle-vendas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Produtos",
+			"item": [
+				{
+					"name": "Add Produto",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "identificador",
+									"value": "02",
+									"description": "Numero de Identificacao do Produto",
+									"type": "text"
+								},
+								{
+									"key": "nome",
+									"value": "Produto add via post ",
+									"description": "Nome do Produto",
+									"type": "text"
+								},
+								{
+									"key": "numero_lote",
+									"value": "11233",
+									"description": "Numero de Identificador do Lote do Produto",
+									"type": "text"
+								},
+								{
+									"key": "valor",
+									"value": "1500",
+									"description": "Para valor \"float'\" utilizar \" . \"  (padrao US)",
+									"type": "text"
+								},
+								{
+									"key": "cor",
+									"value": "Verde",
+									"description": "Nome da cor - String",
+									"type": "text"
+								},
+								{
+									"key": "descricao",
+									"value": "Tenis added via post",
+									"description": "Texto de descricao do produto",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/add-produtos/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"add-produtos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all produtos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/list-produtos/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"list-produtos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get produtos com filtro",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/list-produtos/?nome=&valor=",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"list-produtos",
+								""
+							],
+							"query": [
+								{
+									"key": "nome",
+									"value": ""
+								},
+								{
+									"key": "valor",
+									"value": ""
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details of produto by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/detail-produtos/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"detail-produtos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Teste das funcionalidades da API na tabela de Produtos",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Pedidos",
+			"item": [
+				{
+					"name": "Add Pedido",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "identificador",
+									"value": "7",
+									"description": "Numero de Identificacao do Pedido",
+									"type": "text"
+								},
+								{
+									"key": "produtos",
+									"value": "12 1952",
+									"description": "Identificador do(s) Produto(s), separar por um espaço em branco",
+									"type": "text"
+								},
+								{
+									"key": "status",
+									"value": "1",
+									"description": "Ativo = 1; Pendente = 2; Concluido = 3; Cancelado = 4.",
+									"type": "text"
+								},
+								{
+									"key": "cliente",
+									"value": "Gabriel Suncin",
+									"description": "Nome completo do Cliente cadastrado no sistema",
+									"type": "text"
+								},
+								{
+									"key": "vendedor",
+									"value": "dev",
+									"description": "Utilizar o username do vendedor",
+									"type": "text"
+								},
+								{
+									"key": "valor_total",
+									"value": "150",
+									"description": "Valor total da venda",
+									"type": "text"
+								}
+							],
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{endpoint}}/add-pedidos/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"add-pedidos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all pedidos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/list-pedidos/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"list-pedidos",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details of pedido by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/detail-pedidos/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"detail-pedidos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Teste das funcionalidades da API na tabela de Pedidos",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Lotes",
+			"item": [
+				{
+					"name": "Get all Lotes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/list-lotes/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"list-lotes",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Details of Lotes by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/detail-lotes/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"detail-lotes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Teste das funcionalidades da API na tabela de Lotes",
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "Details of Cliente by ID",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/detail-clientes/1",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"detail-clientes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all Clientes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{endpoint}}/list-clientes/",
+							"host": [
+								"{{endpoint}}"
+							],
+							"path": [
+								"list-clientes",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "username",
+							"value": "dev",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "P1!2DyceH#oS",
+							"type": "text"
+						}
+					],
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{endpoint}}/login/",
+					"host": [
+						"{{endpoint}}"
+					],
+					"path": [
+						"login",
+						""
+					]
+				},
+				"description": "URL POST para realizar login, requisição através de:\n\nBody>form-data>\n\n(Caso utilize o banco SQLite que está no projeto, os dados são:)\n\nusername= dev, password=P1!2DyceH#oS"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
