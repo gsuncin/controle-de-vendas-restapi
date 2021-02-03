@@ -1,8 +1,12 @@
 # Controle de Vendas
 Plataforma de controle de vendas
+
 Desenvolvido em Python + Django, foi utilizado tanto o framework Django RestFramework quanto o python puro para 
 serializar e devolver JsonResponses
+
 Versão do Python -> 3.8
+
+Doc Postman: https://documenter.getpostman.com/view/14447105/TW71n7LA
 
 # Instruções:
 - <strong>Criar um ambiente virtual com Python-3.8 e instale todos os requirements do Projeto "requirements.txt"</strong> 
